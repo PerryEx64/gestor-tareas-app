@@ -10,10 +10,10 @@ export const AuthContextProvider = (props: AuthContextProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
+    /*const storedUser = localStorage.getItem('user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
-    }
+    }*/
   }, []);
 
   useEffect(() => {
