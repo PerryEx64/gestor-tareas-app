@@ -1,5 +1,6 @@
 import { getAutenticate } from './instanceAxios';
 import { Task, TaskBodyCreate, TaskBodyUpdate } from '../types/tasks.types';
+import Toast from 'react-native-toast-message';
 
 export const getTasks = async (userId: string) => {
   try {
@@ -7,7 +8,11 @@ export const getTasks = async (userId: string) => {
     const { data } = await https.get<Task[]>(`/tasks/user/${userId}`);
     return data;
   } catch (error) {
-    console.log('Error retrieving tasks:', error);
+    Toast.show({
+      type: 'error',
+      text1: 'No se pudieron cargar las tareas',
+      text2: 'Por favor, intenta nuevamente.',
+    });
     throw error;
   }
 };
@@ -18,7 +23,11 @@ export const createTask = async (body: TaskBodyCreate) => {
     const { data } = await https.post<Task>(`/tasks`, body);
     return data;
   } catch (error) {
-    console.log('Error creating task:', error);
+    Toast.show({
+      type: 'error',
+      text1: 'No se pudo crear la tarea',
+      text2: 'Por favor, intenta nuevamente.',
+    });
     throw error;
   }
 };

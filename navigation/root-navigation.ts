@@ -12,7 +12,7 @@ export const PrivateStack =
 export type PublicStackProps =
   NativeStackNavigationProp<PublicRootStackParamList>;
 export type PrivateStackProps =
-  NativeStackNavigationProp<PublicRootStackParamList>;
+  NativeStackNavigationProp<PrivateRootStackParamList>;
 
 export type PublicRootStackParamList = {
   login: undefined;

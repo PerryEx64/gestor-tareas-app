@@ -12,7 +12,7 @@ export const LayoutScreen = (props: LayoutScreenProps) => {
       {...layoutProps}
       style={{
         flex: 1,
-        paddingVertical: 20,
+        padding: 20,
       }}
     >
       <SafeAreaView style={{ flex: 1 }}>{props.children}</SafeAreaView>
