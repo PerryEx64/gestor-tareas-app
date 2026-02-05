@@ -12,7 +12,13 @@ export const PublicScreens = () => {
         }}
         component={LoginScreen}
       />
-      <PublicStack.Screen name="register" component={RegisterScreen} />
+      <PublicStack.Screen
+        name="register"
+        options={{
+          headerShown: false,
+        }}
+        component={RegisterScreen}
+      />
     </PublicStack.Navigator>
   );
 };
