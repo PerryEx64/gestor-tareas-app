@@ -1,6 +1,6 @@
 import { Controller, useForm } from 'react-hook-form';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import { Text, Card } from '@ui-kitten/components';
+import { Text, Card, Spinner } from '@ui-kitten/components';
 import { FormLoginProps } from '../../types/auth.types';
 import { useState } from 'react';
 import { Input } from '../Input';
@@ -11,10 +11,11 @@ import { LayoutScreen } from '../layouts/LayoutScreen';
 
 interface LoginFormProps {
   onSubmit: (data: FormLoginProps) => void;
+  isLoading: boolean;
 }
 
 export const LoginForm = (props: LoginFormProps) => {
-  const { onSubmit } = props;
+  const { onSubmit, isLoading } = props;
   const {
     control,
     handleSubmit,
@@ -106,7 +107,12 @@ export const LoginForm = (props: LoginFormProps) => {
             </Text>
           </TouchableWithoutFeedback>
 
-          <Button onPress={handleSubmit(onSubmit)} size="large">
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            disabled={isLoading}
+            accessoryRight={isLoading ? <Spinner size="small" /> : undefined}
+            size="large"
+          >
             Iniciar Sesión
           </Button>
         </View>

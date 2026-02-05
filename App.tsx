@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import Toast from 'react-native-toast-message';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <ApplicationProvider {...eva} theme={eva.light}>
             <StatusBar style="auto" />
             <AppNavigation />
+            <Toast />
           </ApplicationProvider>
         </AuthContextProvider>
       </SafeAreaProvider>
