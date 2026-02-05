@@ -6,9 +6,9 @@ import { useFocusEffect } from '@react-navigation/native';
 import { getTasks } from '../../../services/TasksService';
 import { useUserData } from '../../../hooks/useUser';
 import Toast from 'react-native-toast-message';
-import { Button } from '../../../components/Button';
 import { usePrivateNavigation } from '../../../hooks/usePrivateNavigation';
 import { TasksList } from './components/TasksList';
+import { TaskCreateSheet } from './components/TaskCreateSheet';
 
 export const TasksScreen = () => {
   const [data, setData] = useState<Task[]>([]);
@@ -43,9 +43,7 @@ export const TasksScreen = () => {
   return (
     <LayoutScreen level="1">
       <View style={{ gap: 10 }}>
-        <Button status="primary" onPress={onCreateTask}>
-          Crear Tarea
-        </Button>
+        <TaskCreateSheet />
         <TasksList data={data} isLoading={isLoading} />
       </View>
     </LayoutScreen>

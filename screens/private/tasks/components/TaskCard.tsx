@@ -1,65 +1,20 @@
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Text } from '@ui-kitten/components';
 import { Task } from '../../../../types/tasks.types';
-import { useState } from 'react';
+import { getStatusColor, getStatusLabel } from '../taskHandlers';
 
 interface TaskCardProps {
   task: Task;
-  onPress?: () => void;
-  onStatusChange?: (newStatus: 'pending' | 'in_progress' | 'completed') => void;
+  onSelected: (tas: Task) => void;
 }
 
 export const TaskCard = (props: TaskCardProps) => {
-  const { task, onPress, onStatusChange } = props;
-  const [currentStatus, setCurrentStatus] = useState<
-    'pending' | 'in_progress' | 'completed'
-  >(task.status);
+  const { task, onSelected } = props;
 
-  const handleStatusPress = () => {
-    let newStatus: 'pending' | 'in_progress' | 'completed';
-
-    if (currentStatus === 'pending') {
-      newStatus = 'in_progress';
-    } else if (currentStatus === 'in_progress') {
-      newStatus = 'completed';
-    } else {
-      newStatus = 'pending';
-    }
-
-    setCurrentStatus(newStatus);
-    onStatusChange?.(newStatus);
-  };
-
-  const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'completed':
-        return '#00E096';
-      case 'in_progress':
-        return '#3366FF';
-      case 'pending':
-        return '#FFAA00';
-      default:
-        return '#8F9BB3';
-    }
-  };
-
-  const getStatusLabel = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'completed':
-        return 'Completada';
-      case 'in_progress':
-        return 'En Progreso';
-      case 'pending':
-        return 'Pendiente';
-      default:
-        return status;
-    }
-  };
-
-  const isCompleted = currentStatus === 'completed';
+  const isCompleted = task.status === 'completed';
 
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+    <TouchableOpacity onPress={() => onSelected(task)}>
       <Card style={styles.card} disabled>
         <View style={styles.content}>
           <View style={styles.leftSection}>
@@ -86,18 +41,16 @@ export const TaskCard = (props: TaskCardProps) => {
             </View>
           </View>
 
-          <TouchableOpacity
-            onPress={handleStatusPress}
-            activeOpacity={0.8}
+          <View
             style={[
               styles.statusBadge,
-              { backgroundColor: getStatusColor(currentStatus) },
+              { backgroundColor: getStatusColor(task.status) },
             ]}
           >
             <Text category="c1" style={styles.statusText}>
-              {getStatusLabel(currentStatus)}
+              {getStatusLabel(task.status)}
             </Text>
-          </TouchableOpacity>
+          </View>
         </View>
       </Card>
     </TouchableOpacity>
