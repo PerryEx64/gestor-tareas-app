@@ -9,3 +9,5 @@ export interface LoginResponse {
 export interface RegisterBody extends Omit<User, 'id'> {
   password: string;
 }
+
+export type FormLoginProps = Pick<RegisterBody, 'email' | 'password'>;

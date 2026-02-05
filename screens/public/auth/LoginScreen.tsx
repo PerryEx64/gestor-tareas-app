@@ -1,9 +1,10 @@
-import { Text, View } from 'react-native';
+import { LayoutScreen } from '../../../components/layouts/LayoutScreen';
+import { LoginForm } from '../../../components/forms/LoginForm';
 
 export const LoginScreen = () => {
   return (
-    <View>
-      <Text>Login Screen</Text>
-    </View>
+    <LayoutScreen level="1">
+      <LoginForm onSubmit={() => {}} />
+    </LayoutScreen>
   );
 };

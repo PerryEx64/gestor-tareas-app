@@ -3,16 +3,22 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AuthContextProvider } from './store/AuthContextProvider';
 import { AppNavigation } from './navigation/AppNavigation';
 import { NavigationContainer } from '@react-navigation/native';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import * as eva from '@eva-design/eva';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <NavigationContainer>
+    <NavigationContainer>
+      <SafeAreaProvider>
         <AuthContextProvider>
-          <AppNavigation />
-          <StatusBar style="auto" />
+          <IconRegistry icons={EvaIconsPack} />
+          <ApplicationProvider {...eva} theme={eva.light}>
+            <StatusBar style="auto" />
+            <AppNavigation />
+          </ApplicationProvider>
         </AuthContextProvider>
-      </NavigationContainer>
-    </SafeAreaProvider>
+      </SafeAreaProvider>
+    </NavigationContainer>
   );
 }
