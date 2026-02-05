@@ -21,6 +21,7 @@ export const TasksList = (props: TasksListProps) => {
   return (
     <FlatList
       data={data}
+      style={{ padding: 5 }}
       keyExtractor={(item) => item.id}
       renderItem={({ item, index }) => <TaskCard task={item} />}
     />

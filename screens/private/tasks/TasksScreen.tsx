@@ -42,10 +42,12 @@ export const TasksScreen = () => {
 
   return (
     <LayoutScreen level="1">
-      <Button status="primary" onPress={onCreateTask}>
-        Crear Tarea
-      </Button>
-      <TasksList data={data} isLoading={isLoading} />
+      <View style={{ gap: 10 }}>
+        <Button status="primary" onPress={onCreateTask}>
+          Crear Tarea
+        </Button>
+        <TasksList data={data} isLoading={isLoading} />
+      </View>
     </LayoutScreen>
   );
 };
