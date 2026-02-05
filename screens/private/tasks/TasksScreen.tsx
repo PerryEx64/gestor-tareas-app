@@ -1,9 +1,10 @@
 import { Text, View } from 'react-native';
+import { LayoutScreen } from '../../../components/layouts/LayoutScreen';
 
 export const TasksScreen = () => {
   return (
-    <View>
+    <LayoutScreen level="1">
       <Text>Tasks Screen</Text>
-    </View>
+    </LayoutScreen>
   );
 };

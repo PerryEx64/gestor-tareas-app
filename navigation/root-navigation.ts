@@ -2,11 +2,12 @@ import {
   createNativeStackNavigator,
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 export const PublicStack =
   createNativeStackNavigator<PublicRootStackParamList>();
 export const PrivateStack =
-  createNativeStackNavigator<PrivateRootStackParamList>();
+  createBottomTabNavigator<PrivateRootStackParamList>();
 
 export type PublicStackProps =
   NativeStackNavigationProp<PublicRootStackParamList>;

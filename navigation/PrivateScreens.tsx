@@ -5,8 +5,16 @@ import { TasksScreen } from '../screens/private/tasks/TasksScreen';
 export const PrivateScreens = () => {
   return (
     <PrivateStack.Navigator>
-      <PrivateStack.Screen name="tasks" component={TasksScreen} />
-      <PrivateStack.Screen name="profile" component={ProfileScreen} />
+      <PrivateStack.Screen
+        name="tasks"
+        options={{ headerShown: false }}
+        component={TasksScreen}
+      />
+      <PrivateStack.Screen
+        name="profile"
+        options={{ headerShown: false }}
+        component={ProfileScreen}
+      />
     </PrivateStack.Navigator>
   );
 };
