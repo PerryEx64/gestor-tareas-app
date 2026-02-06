@@ -102,4 +102,19 @@ Este documento contiene capturas de pantalla que muestran las principales funcio
 
 ---
 
+## 📱 Vista de la Aplicación por Plataforma
+
+### iOS vs Android
+
+<p align="center">
+  <img src="./assets/examples/Frame 1.png" alt="Vista en iOS" width="300"/>
+  <img src="./assets/examples/Frame 3.png" alt="Vista en Android" width="300"/>
+</p>
+
+<p align="center">
+  <em>Izquierda: Apariencia de la aplicación en iOS | Derecha: Apariencia de la aplicación en Android</em>
+</p>
+
+---
+
 **Última actualización:** Febrero 2026
