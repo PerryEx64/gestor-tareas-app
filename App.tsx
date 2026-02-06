@@ -12,6 +12,12 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { ThemeContextProvider } from './store/ThemeContextProvider';
 import { useTheme } from './hooks/useTheme';
 import { AssetIconsPack } from './components/icons/IconProvider';
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.setOptions({
+  duration: 2000,
+  fade: true,
+});
 
 const AppContent = () => {
   const { theme } = useTheme();
