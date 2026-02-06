@@ -1,70 +1,95 @@
-import { View, StyleSheet } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Platform,
+  KeyboardAvoidingView,
+} from 'react-native';
 import { useUserData } from '../../../hooks/useUser';
 import { LayoutScreen } from '../../../components/layouts/LayoutScreen';
-import { Card, Text } from '@ui-kitten/components';
+import { Card, Layout, Text } from '@ui-kitten/components';
 import { ButtonLogout } from '../../../components/ButtonLogout';
 import { ToggleTheme } from '../../../components/ToggleTheme';
+import { ApiConnect } from '../../../components/forms/ApiConnect';
 
 export const ProfileScreen = () => {
   const userData = useUserData();
 
   return (
-    <LayoutScreen level="1">
-      <View style={styles.container}>
-        <View style={styles.headerSection}>
-          <View style={styles.avatarContainer}>
-            <Text style={styles.avatarText}>
-              {userData?.firstname?.[0]?.toUpperCase() || 'U'}
-              {userData?.lastname?.[0]?.toUpperCase() || 'S'}
-            </Text>
-          </View>
-          <Text style={styles.userName}>
-            {userData?.firstname} {userData?.lastname}
-          </Text>
-          <Text style={styles.userEmail}>{userData?.email}</Text>
-        </View>
-
-        <Card style={styles.card} disabled>
-          <View style={styles.infoSection}>
-            <Text style={styles.sectionTitle}>Información Personal</Text>
-
-            <View style={styles.infoRow}>
-              <Text style={styles.infoLabel}>Nombre</Text>
-              <Text style={styles.infoValue}>
-                {userData?.firstname || 'N/A'}
+    <Layout style={{ flex: 1, paddingVertical: 20 }} level="1">
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        style={styles.container}
+      >
+        <ScrollView style={{ flex: 1 }}>
+          <View style={styles.container}>
+            <View style={styles.headerSection}>
+              <View style={styles.avatarContainer}>
+                <Text style={styles.avatarText}>
+                  {userData?.firstname?.[0]?.toUpperCase() || 'U'}
+                  {userData?.lastname?.[0]?.toUpperCase() || 'S'}
+                </Text>
+              </View>
+              <Text style={styles.userName}>
+                {userData?.firstname} {userData?.lastname}
               </Text>
+              <Text style={styles.userEmail}>{userData?.email}</Text>
             </View>
 
-            <View style={styles.divider} />
+            <Card style={styles.card} disabled>
+              <View style={styles.infoSection}>
+                <Text style={styles.sectionTitle}>Información Personal</Text>
 
-            <View style={styles.infoRow}>
-              <Text style={styles.infoLabel}>Apellido</Text>
-              <Text style={styles.infoValue}>
-                {userData?.lastname || 'N/A'}
-              </Text>
-            </View>
+                <View style={styles.infoRow}>
+                  <Text style={styles.infoLabel}>Nombre</Text>
+                  <Text style={styles.infoValue}>
+                    {userData?.firstname || 'N/A'}
+                  </Text>
+                </View>
 
-            <View style={styles.divider} />
+                <View style={styles.divider} />
 
-            <View style={styles.infoRow}>
-              <Text style={styles.infoLabel}>Correo electrónico</Text>
-              <Text style={styles.infoValue}>{userData?.email || 'N/A'}</Text>
-            </View>
+                <View style={styles.infoRow}>
+                  <Text style={styles.infoLabel}>Apellido</Text>
+                  <Text style={styles.infoValue}>
+                    {userData?.lastname || 'N/A'}
+                  </Text>
+                </View>
+
+                <View style={styles.divider} />
+
+                <View style={styles.infoRow}>
+                  <Text style={styles.infoLabel}>Correo electrónico</Text>
+                  <Text style={styles.infoValue}>
+                    {userData?.email || 'N/A'}
+                  </Text>
+                </View>
+              </View>
+            </Card>
+
+            <Card style={styles.card} disabled>
+              <View style={styles.infoSection}>
+                <Text style={styles.sectionTitle}>Preferencias</Text>
+                <View style={styles.infoRow}>
+                  <ToggleTheme />
+                </View>
+              </View>
+            </Card>
+
+            <Card style={styles.card} disabled>
+              <View style={styles.infoSection}>
+                <Text style={styles.sectionTitle}>Conectividad</Text>
+                <View style={styles.infoRow}>
+                  <ApiConnect />
+                </View>
+              </View>
+            </Card>
+
+            <ButtonLogout />
           </View>
-        </Card>
-
-        <Card style={styles.card} disabled>
-          <View style={styles.infoSection}>
-            <Text style={styles.sectionTitle}>Preferencias</Text>
-            <View style={styles.infoRow}>
-              <ToggleTheme />
-            </View>
-          </View>
-        </Card>
-
-        <ButtonLogout />
-      </View>
-    </LayoutScreen>
+        </ScrollView>
+      </KeyboardAvoidingView>
+    </Layout>
   );
 };
 
