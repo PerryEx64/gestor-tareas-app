@@ -7,6 +7,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useTasks } from '../../../../hooks/useTasks';
 import Toast from 'react-native-toast-message';
 import { deleteTask } from '../../../../services/TasksService';
+import { handlerError } from '../../../../utils/error-handler';
 
 export const TasksList = () => {
   const { tasks, isLoading } = useTasks();
@@ -34,10 +35,10 @@ export const TasksList = () => {
         text1: 'Tarea eliminada exitosamente',
       });
     } catch (error) {
+      const message = handlerError(error);
       Toast.show({
         type: 'error',
-        text1: 'Error al eliminar la tarea',
-        text2: 'Por favor, intenta nuevamente.',
+        text1: message,
       });
     }
   }, []);
@@ -56,7 +57,7 @@ export const TasksList = () => {
         data={tasks}
         style={{ padding: 5 }}
         keyExtractor={(item) => item.id}
-        renderItem={({ item, index }) => (
+        renderItem={({ item }) => (
           <TaskCard
             task={item}
             onSelected={setTaskSelected}

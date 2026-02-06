@@ -8,6 +8,7 @@ import { TaskBodyCreate } from '../../../../types/tasks.types';
 import { createTask } from '../../../../services/TasksService';
 import { useUserData } from '../../../../hooks/useUser';
 import { useTasks } from '../../../../hooks/useTasks';
+import { handlerError } from '../../../../utils/error-handler';
 
 export const TaskCreateSheet = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +38,10 @@ export const TaskCreateSheet = () => {
         text1: 'Tarea creada exitosamente',
       });
     } catch (error) {
+      const message = handlerError(error);
       Toast.show({
         type: 'error',
-        text1: 'Error al crear la tarea',
-        text2: 'Por favor, intenta nuevamente.',
+        text1: message,
       });
     } finally {
       setIsLoading(false);

@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import { Card } from '@ui-kitten/components';
 import { ConfigurationAuthSheet } from './components/ConfigurationAuthSheet';
+import { handlerError } from '../../../utils/error-handler';
 
 export const LoginScreen = () => {
   const { setUser } = useContext(AuthContext);
@@ -36,19 +37,11 @@ export const LoginScreen = () => {
           text2: `¡Bienvenido de nuevo, ${user.firstname}!`,
         });
       } catch (e: any) {
-        if (e?.status === 401) {
-          Toast.show({
-            type: 'error',
-            text1: 'Credenciales inválidas',
-            text2: 'El correo electrónico o la contraseña son incorrectos.',
-          });
-          return;
-        }
-
+        const message = handlerError(e);
         Toast.show({
           type: 'error',
           text1: 'Error de inicio de sesión',
-          text2: 'Por favor, verifica tus credenciales e intenta nuevamente.',
+          text2: message,
         });
       } finally {
         setIsLoading(false);

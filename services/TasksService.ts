@@ -1,20 +1,10 @@
 import { getAutenticate } from './instanceAxios';
 import { Task, TaskBodyCreate, TaskBodyUpdate } from '../types/tasks.types';
-import Toast from 'react-native-toast-message';
 
 export const getTasks = async (userId: string) => {
-  try {
-    const https = await getAutenticate();
-    const { data } = await https.get<Task[]>(`/tasks/user/${userId}`);
-    return data;
-  } catch (error) {
-    Toast.show({
-      type: 'error',
-      text1: 'No se pudieron cargar las tareas',
-      text2: 'Por favor, intenta nuevamente.',
-    });
-    throw error;
-  }
+  const https = await getAutenticate();
+  const { data } = await https.get<Task[]>(`/tasks/user/${userId}`);
+  return data;
 };
 
 export const createTask = async (body: TaskBodyCreate) => {
@@ -31,11 +21,6 @@ export const updateTask = async (body: TaskBodyUpdate) => {
 };
 
 export const deleteTask = async (taskId: string) => {
-  try {
-    const https = await getAutenticate();
-    await https.delete(`/tasks/${taskId}`);
-  } catch (error) {
-    console.log('Error deleting task:', error);
-    throw error;
-  }
+  const https = await getAutenticate();
+  await https.delete(`/tasks/${taskId}`);
 };

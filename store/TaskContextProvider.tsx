@@ -5,6 +5,7 @@ import Toast from 'react-native-toast-message';
 import { getTasks } from '../services/TasksService';
 import { useFocusEffect } from '@react-navigation/native';
 import { useUserData } from '../hooks/useUser';
+import { handlerError } from '../utils/error-handler';
 
 export interface TaskContextProviderProps {
   children: ReactNode;
@@ -28,6 +29,13 @@ export const TaskContextProvider = (props: TaskContextProviderProps) => {
 
     getTasks(userData.id)
       .then(setTasks)
+      .catch((e) => {
+        const message = handlerError(e);
+        Toast.show({
+          type: 'error',
+          text1: message,
+        });
+      })
       .finally(() => setIsLoading(false));
   }, []);
   useFocusEffect(fetchTasks);

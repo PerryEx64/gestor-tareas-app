@@ -6,6 +6,7 @@ import { updateTask } from '../../../../services/TasksService';
 import { useState } from 'react';
 import { useUserData } from '../../../../hooks/useUser';
 import { useTasks } from '../../../../hooks/useTasks';
+import { handlerError } from '../../../../utils/error-handler';
 
 interface TaskEditSheetProps {
   task: Task | null;
@@ -37,10 +38,10 @@ export const TaskEditSheet = (props: TaskEditSheetProps) => {
         text1: 'Tarea actualizada exitosamente',
       });
     } catch (error) {
+      const message = handlerError(error);
       Toast.show({
         type: 'error',
-        text1: 'Error al actualizar la tarea',
-        text2: 'Por favor, intenta nuevamente.',
+        text1: message,
       });
     } finally {
       setIsLoading(false);

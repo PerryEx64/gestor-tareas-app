@@ -12,6 +12,7 @@ import { onLogin, onRegister } from '../../../services/AuthService';
 import { saveStorageSecure } from '../../../services/StorageService';
 import Toast from 'react-native-toast-message';
 import { AuthContext } from '../../../store/AuthContext';
+import { handlerError } from '../../../utils/error-handler';
 
 export const RegisterScreen = () => {
   const { setUser } = useContext(AuthContext);
@@ -34,11 +35,13 @@ export const RegisterScreen = () => {
           text2: `¡Bienvenido de nuevo, ${user.firstname}!`,
         });
       } catch (e: any) {
+        const errorMessage = handlerError(e);
         Toast.show({
           type: 'error',
-          text1: 'Error de inicio de sesión',
-          text2: 'Por favor, verifica tus credenciales e intenta nuevamente.',
+          text1: 'Error al iniciar sesión',
+          text2: errorMessage,
         });
+        console.log(JSON.stringify(e));
       } finally {
         setIsLoading(false);
       }
