@@ -6,6 +6,7 @@ interface TaskContextProps {
   setTasks: Dispatch<SetStateAction<Task[]>>;
   onAddLocalTask: (newTask: Task) => void;
   onUpdateLocalTask: (updatedTask: Task) => void;
+  onDeleteLocalTask: (deletedTaskId: string) => void;
   isLoading: boolean;
 }
 
@@ -15,6 +16,7 @@ const TaskContextInitValues: TaskContextProps = {
   isLoading: false,
   onAddLocalTask: () => {},
   onUpdateLocalTask: () => {},
+  onDeleteLocalTask: () => {},
 };
 
 export const TaskContext = createContext(TaskContextInitValues);

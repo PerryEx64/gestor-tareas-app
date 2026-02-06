@@ -14,5 +14,6 @@ export const AssetIconsPack = {
     in_progress: IconProvider(
       require('../../assets/icons/brain_in_progress.png')
     ),
+    delete: IconProvider(require('../../assets/icons/trash.png')),
   },
 };

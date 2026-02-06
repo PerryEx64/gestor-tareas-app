@@ -42,9 +42,22 @@ export const TaskContextProvider = (props: TaskContextProviderProps) => {
     );
   }, []);
 
+  const onDeleteLocalTask = useCallback((deletedTaskId: string) => {
+    setTasks((prevTasks) =>
+      prevTasks.filter((task) => task.id !== deletedTaskId)
+    );
+  }, []);
+
   return (
     <TaskContext.Provider
-      value={{ tasks, setTasks, isLoading, onAddLocalTask, onUpdateLocalTask }}
+      value={{
+        tasks,
+        setTasks,
+        isLoading,
+        onAddLocalTask,
+        onUpdateLocalTask,
+        onDeleteLocalTask,
+      }}
     >
       {children}
     </TaskContext.Provider>

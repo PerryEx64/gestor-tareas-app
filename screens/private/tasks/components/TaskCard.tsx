@@ -1,31 +1,33 @@
-import { View, StyleSheet, Pressable } from 'react-native';
+import { View, StyleSheet, Pressable, Alert } from 'react-native';
 import { Card, Icon, Text } from '@ui-kitten/components';
 import { Task } from '../../../../types/tasks.types';
 import { getStatusColor, getStatusLabel } from '../taskHandlers';
-import { useMemo } from 'react';
 
 interface TaskCardProps {
   task: Task;
   onSelected: (tas: Task) => void;
+  onDelete: (id: string) => void;
 }
 
 export const TaskCard = (props: TaskCardProps) => {
-  const { task, onSelected } = props;
+  const { task, onSelected, onDelete } = props;
 
   const isCompleted = task.status === 'completed';
 
-  const getIconName = useMemo(() => {
-    switch (task.status) {
-      case 'pending':
-        return 'pending';
-      case 'in_progress':
-        return 'in_progress';
-      case 'completed':
-        return 'completed';
-      default:
-        return 'think';
-    }
-  }, [task.status]);
+  const handleDelete = () => {
+    Alert.alert(
+      'Eliminar Tarea',
+      '¿Estás seguro de que deseas eliminar esta tarea?',
+      [
+        { text: 'Cancelar', style: 'cancel' },
+        {
+          text: 'Eliminar',
+          style: 'destructive',
+          onPress: () => onDelete(task.id),
+        },
+      ]
+    );
+  };
   return (
     <Pressable
       style={({ pressed }) => [
@@ -61,20 +63,33 @@ export const TaskCard = (props: TaskCardProps) => {
             </View>
           </View>
 
-          <View
-            style={[
-              styles.statusBadge,
-              { backgroundColor: getStatusColor(task.status) },
-            ]}
-          >
-            <Text category="c1" style={styles.statusText}>
-              {getStatusLabel(task.status)}
-            </Text>
-            <Icon
-              name={getIconName}
-              pack="assets"
-              style={{ width: 20, height: 20 }}
-            />
+          <View style={{ gap: 8, alignItems: 'flex-end' }}>
+            <View
+              style={[
+                styles.statusBadge,
+                { backgroundColor: getStatusColor(task.status) },
+              ]}
+            >
+              <Text category="c1" style={styles.statusText}>
+                {getStatusLabel(task.status)}
+              </Text>
+            </View>
+
+            <Pressable
+              onPress={handleDelete}
+              style={({ pressed }) => [
+                {
+                  transform: [{ scale: pressed ? 0.95 : 1 }],
+                },
+              ]}
+            >
+              <Icon
+                name="delete"
+                pack="assets"
+                style={{ width: 33, height: 33 }}
+                fill="#FF3D71"
+              />
+            </Pressable>
           </View>
         </View>
       </Card>
@@ -132,11 +147,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 12,
     marginLeft: 8,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     gap: 5,
-    width: 110,
   },
   statusText: {
     color: '#FFFFFF',
