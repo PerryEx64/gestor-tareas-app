@@ -1,4 +1,9 @@
-import { StyleSheet, KeyboardAvoidingView, Platform } from 'react-native';
+import {
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from 'react-native';
 import { LayoutScreen } from '../../../components/layouts/LayoutScreen';
 import { RegisterForm } from '../../../components/forms/RegisterForm';
 import { RegisterBody } from '../../../types/auth.types';
@@ -14,7 +19,9 @@ export const RegisterScreen = () => {
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.container}
       >
-        <RegisterForm onSubmit={handleRegister} />
+        <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
+          <RegisterForm onSubmit={handleRegister} />
+        </ScrollView>
       </KeyboardAvoidingView>
     </LayoutScreen>
   );
