@@ -1,12 +1,13 @@
 import { Controller, useForm } from 'react-hook-form';
 import { View, StyleSheet } from 'react-native';
-import { Text } from '@ui-kitten/components';
+import { Layout, Text } from '@ui-kitten/components';
 import { TaskBodyCreate, TaskBodyUpdate } from '../../types/tasks.types';
 import { Input } from '../Input';
 import { Button } from '../Button';
 import { defaultValidate } from '../../utils/rules-form';
-import { useEffect } from 'react';
 import { TaskStatusChip } from '../../screens/private/tasks/components/TaskStatusChip';
+import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
+import { BottomSheetInput } from '../BottomSheetInput';
 
 interface TaskCreateFormProps {
   onSubmit: (data: TaskBodyCreate | TaskBodyUpdate) => void;
@@ -39,7 +40,7 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
   const isEditMode = mode === 'edit';
 
   return (
-    <View style={styles.container}>
+    <Layout style={styles.container}>
       <View style={styles.header}>
         <Text category="h5" style={styles.title}>
           {isEditMode ? 'Editar Tarea' : 'Nueva Tarea'}
@@ -73,13 +74,12 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
           rules={defaultValidate}
           render={({ field: { value, onBlur, onChange } }) => {
             return (
-              <Input
+              <BottomSheetInput
                 value={value}
                 label="Título"
                 placeholder="Nombre de la tarea"
                 onBlur={onBlur}
                 onChangeText={onChange}
-                status={errors.title ? 'danger' : 'basic'}
                 caption={renderCaption(errors.title?.message)}
                 autoCapitalize="sentences"
                 size="large"
@@ -94,7 +94,7 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
           rules={defaultValidate}
           render={({ field: { value, onBlur, onChange } }) => {
             return (
-              <Input
+              <BottomSheetInput
                 value={value}
                 label="Descripción"
                 placeholder="Describe la tarea"
@@ -105,7 +105,6 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
                 autoCapitalize="sentences"
                 multiline
                 numberOfLines={4}
-                textStyle={styles.textArea}
                 size="large"
               />
             );
@@ -120,7 +119,7 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
           {isEditMode ? 'Guardar Cambios' : 'Crear Tarea'}
         </Button>
       </View>
-    </View>
+    </Layout>
   );
 };
 
@@ -144,6 +143,7 @@ const styles = StyleSheet.create({
   },
   form: {
     gap: 20,
+    marginBottom: 25,
   },
   label: {
     marginBottom: 8,

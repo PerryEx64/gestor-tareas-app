@@ -1,17 +1,9 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import React, { ReactNode, useEffect, useRef } from 'react';
 import {
   BottomSheetModal,
   BottomSheetView,
-  BottomSheetModalProvider,
   BottomSheetBackdrop,
+  BottomSheetTextInput,
 } from '@gorhom/bottom-sheet';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -44,8 +36,6 @@ export const BottomSheet = (props: BottomSheetProps) => {
       enablePanDownToClose={false}
       index={targetSnapPoint ?? 0}
       snapPoints={snapPoints}
-      enableDynamicSizing={true}
-      enableDismissOnClose={true}
       bottomInset={bottom}
       backdropComponent={(props) => (
         <BottomSheetBackdrop

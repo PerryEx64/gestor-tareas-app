@@ -50,7 +50,7 @@ export const TaskCreateSheet = () => {
   return (
     <View>
       <Button onPress={onOpenSheet}>Crear Tarea</Button>
-      <BottomSheet isOpen={isOpen} onOpen={setIsOpen} snapPoints={['80%']}>
+      <BottomSheet isOpen={isOpen} onOpen={setIsOpen} snapPoints={['65%']}>
         <TaskCreateForm
           onSubmit={(data) => onCreateTask(data as TaskBodyCreate)}
           isLoading={isLoading}

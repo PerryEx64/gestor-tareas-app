@@ -52,7 +52,7 @@ export const TaskEditSheet = (props: TaskEditSheetProps) => {
   }
 
   return (
-    <BottomSheet isOpen={isOpen} onOpen={onOpen} snapPoints={['80%']}>
+    <BottomSheet isOpen={isOpen} onOpen={onOpen} snapPoints={['60%']}>
       <TaskCreateForm
         onSubmit={(data) => onUpdateTask(data as TaskBodyUpdate)}
         mode="edit"
