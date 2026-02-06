@@ -23,7 +23,7 @@ Si no quieres instalar todo el entorno de desarrollo en tu máquina, puedes usar
 #### Pasos:
 
 1. **Descargar el APK:**
-   - Descarga el archivo `gestor-tareas-app.apk` desde [./builds/gestor-tareas-app.apk](./builds/gestor-tareas-app.apk)
+   - Descarga el archivo `gestor-tareas-app.apk` desde [./builds/gestor-tareas-app.apk](./builds/gestor-tareas-app.apk.zip)
 
 2. **Instalar el APK en tu dispositivo Android:**
    - Transfiere el archivo APK a tu teléfono
@@ -312,9 +312,8 @@ npm run android
 - Verifica que tu computadora y emulador estén en la misma red
 - Revisa que el backend esté escuchando en todas las interfaces (0.0.0.0) y no solo en localhost
 
-
-
 ## 👤 Autor
+
 **Nombre**: Israel Aguilar  
 **Fecha**: Febrero 2026
 
