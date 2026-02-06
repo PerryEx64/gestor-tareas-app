@@ -13,7 +13,7 @@ export interface TaskBodyCreate extends Omit<
   Task,
   'id' | 'created_at' | 'updated_at'
 > {
-  userId: string;
+  user_id: string;
 }
 
 export type TaskBodyUpdate = Omit<Task, 'created_at' | 'updated_at'>;

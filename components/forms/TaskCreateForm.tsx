@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import { TaskStatusChip } from '../../screens/private/tasks/components/TaskStatusChip';
 
 interface TaskCreateFormProps {
-  onSubmit: (data: TaskBodyCreate) => void;
+  onSubmit: (data: TaskBodyCreate | TaskBodyUpdate) => void;
   isLoading?: boolean;
   initialValues?: TaskBodyUpdate;
   mode?: 'create' | 'edit';
@@ -21,21 +21,9 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
     control,
     handleSubmit,
     formState: { errors },
-    reset,
-    setValue,
   } = useForm<TaskBodyCreate>({
     defaultValues: initialValues as any,
   });
-
-  // Inicializa el campo status en el formulario (sin UI para seleccionarlo)
-  useEffect(() => {
-    if (initialValues) {
-      reset(initialValues as any);
-      setValue('status', (initialValues as any).status || 'pending');
-    } else {
-      setValue('status', 'pending');
-    }
-  }, [initialValues, reset, setValue]);
 
   const renderCaption = (message?: string) => {
     if (!message) {

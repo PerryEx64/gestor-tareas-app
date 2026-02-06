@@ -1,5 +1,6 @@
-import { AuthContext, User } from '../store/AuthContext';
+import { AuthContext } from '../store/AuthContext';
 import { useContext } from 'react';
+import { User } from '../types/user.types';
 
 export const useUserData = (): User | null => {
   const context = useContext(AuthContext);

@@ -3,19 +3,50 @@ import { useState } from 'react';
 import { View } from 'react-native';
 import { Button } from '../../../../components/Button';
 import { TaskCreateForm } from '../../../../components/forms/TaskCreateForm';
+import Toast from 'react-native-toast-message';
+import { TaskBodyCreate } from '../../../../types/tasks.types';
+import { createTask } from '../../../../services/TasksService';
+import { useUserData } from '../../../../hooks/useUser';
 
 export const TaskCreateSheet = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const userData = useUserData();
   const onOpenSheet = () => {
     setIsOpen(true);
+  };
+
+  const onCreateTask = async (data: TaskBodyCreate) => {
+    try {
+      if (!userData?.id) {
+        Toast.show({
+          type: 'error',
+          text1: 'Usuario no autenticado',
+        });
+        return;
+      }
+
+      setIsLoading(true);
+      await createTask({ ...data, user_id: userData.id });
+      setIsOpen(false);
+      Toast.show({
+        type: 'success',
+        text1: 'Tarea creada exitosamente',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <View>
       <Button onPress={onOpenSheet}>Crear Tarea</Button>
-      <BottomSheet isOpen={isOpen} onOpen={setIsOpen} snapPoints={['60%']}>
-        <TaskCreateForm onSubmit={() => {}} />
+      <BottomSheet isOpen={isOpen} onOpen={setIsOpen} snapPoints={['80%']}>
+        <TaskCreateForm
+          onSubmit={(data) => onCreateTask(data as TaskBodyCreate)}
+          isLoading={isLoading}
+          mode="create"
+        />
       </BottomSheet>
     </View>
   );

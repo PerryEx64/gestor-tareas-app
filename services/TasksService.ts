@@ -28,7 +28,6 @@ export const createTask = async (body: TaskBodyCreate) => {
       text1: 'No se pudo crear la tarea',
       text2: 'Por favor, intenta nuevamente.',
     });
-    throw error;
   }
 };
 
@@ -39,8 +38,7 @@ export const updateTask = async (body: TaskBodyUpdate) => {
     const { data } = await https.put<Task>(`/tasks/${id}`, rest);
     return data;
   } catch (error) {
-    console.log('Error updating task:', error);
-    throw error;
+    console.log('Error updating task:', JSON.stringify(error));
   }
 };
 
