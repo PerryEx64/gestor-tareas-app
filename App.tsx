@@ -9,24 +9,39 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import Toast from 'react-native-toast-message';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { ThemeContextProvider } from './store/ThemeContextProvider';
+import { useTheme } from './hooks/useTheme';
+
+const AppContent = () => {
+  const { theme } = useTheme();
+
+  return (
+    <ApplicationProvider
+      {...eva}
+      theme={theme === 'dark' ? eva.dark : eva.light}
+    >
+      <BottomSheetModalProvider>
+        <NavigationContainer>
+          <SafeAreaProvider>
+            <AuthContextProvider>
+              <IconRegistry icons={EvaIconsPack} />
+              <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
+              <AppNavigation />
+              <Toast />
+            </AuthContextProvider>
+          </SafeAreaProvider>
+        </NavigationContainer>
+      </BottomSheetModalProvider>
+    </ApplicationProvider>
+  );
+};
 
 export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <ApplicationProvider {...eva} theme={eva.light}>
-        <BottomSheetModalProvider>
-          <NavigationContainer>
-            <SafeAreaProvider>
-              <AuthContextProvider>
-                <IconRegistry icons={EvaIconsPack} />
-                <StatusBar style="auto" />
-                <AppNavigation />
-                <Toast />
-              </AuthContextProvider>
-            </SafeAreaProvider>
-          </NavigationContainer>
-        </BottomSheetModalProvider>
-      </ApplicationProvider>
+      <ThemeContextProvider>
+        <AppContent />
+      </ThemeContextProvider>
     </GestureHandlerRootView>
   );
 }

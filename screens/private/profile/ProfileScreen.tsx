@@ -1,8 +1,9 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useUserData } from '../../../hooks/useUser';
 import { LayoutScreen } from '../../../components/layouts/LayoutScreen';
-import { Card } from '@ui-kitten/components';
+import { Card, Text } from '@ui-kitten/components';
 import { ButtonLogout } from '../../../components/ButtonLogout';
+import { ToggleTheme } from '../../../components/ToggleTheme';
 
 export const ProfileScreen = () => {
   const userData = useUserData();
@@ -52,6 +53,15 @@ export const ProfileScreen = () => {
           </View>
         </Card>
 
+        <Card style={styles.card} disabled>
+          <View style={styles.infoSection}>
+            <Text style={styles.sectionTitle}>Preferencias</Text>
+            <View style={styles.infoRow}>
+              <ToggleTheme />
+            </View>
+          </View>
+        </Card>
+
         <ButtonLogout />
       </View>
     </LayoutScreen>
@@ -61,7 +71,7 @@ export const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 25,
+    paddingHorizontal: 10,
     paddingTop: 20,
   },
   headerSection: {
