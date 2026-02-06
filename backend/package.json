@@ -1,0 +1,50 @@
+{
+  "name": "focusly-backend",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "dev": "npm run build && nodemon lib/src/index.js",
+    "serve": "npm run build && node lib/index.js",
+    "migration:generate": "npx sequelize-cli migration:generate --name create-tasks-table",
+    "seed:generate": "npx sequelize-cli seed:generate --name demo-tasks",
+    "migration:migrate": "npx sequelize-cli db:migrate",
+    "seed:migrate": "npx sequelize-cli db:seed:all"
+  },
+  "keywords": [],
+  "author": "perryex64",
+  "license": "ISC",
+  "description": "Backend para prueba técnica sobre Gestor de Tareas",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.2.0",
+    "@types/validator": "^13.15.10",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "i": "^0.3.7",
+    "pm": "^2.2.6",
+    "prettier": "^3.8.1",
+    "reflect-metadata": "^0.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.16.3",
+    "nodemon": "^3.1.11",
+    "path": "^0.12.7",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6",
+    "uuid": "^13.0.0"
+  }
+}

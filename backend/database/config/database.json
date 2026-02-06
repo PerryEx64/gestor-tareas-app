@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "tasks_user",
+    "password": "tasks_password",
+    "database": "tasks_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}

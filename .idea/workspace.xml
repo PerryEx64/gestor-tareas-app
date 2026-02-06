@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="52a0bd65-7929-4598-9287-6bc747b8e8b7" name="Changes" comment="Fix APK download link in README.md to include .zip extension" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PerryEx64&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/PerryEx64/gestor-tareas-app.git&quot;,
+    &quot;accountId&quot;: &quot;22c06055-d288-4f1a-85de-7a2a68a7b156&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="39EPj7sQI2ypueWOUBYTjXlquO1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Jest.&lt;LoginScreen /&gt;.Text renders correctly on HomeScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.&lt;LoginScreen /&gt;.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.&lt;LoginScreen /&gt;.should enable login button when inputs are filled.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.All Tests.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Auth Service Tests.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Login Service Tests.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.Login functionality.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.onSubmitLogin.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.useUserData.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/assets&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.android.executor&quot;: &quot;Run&quot;,
+    &quot;npm.android:prebuild.executor&quot;: &quot;Run&quot;,
+    &quot;npm.android:preview-apk.executor&quot;: &quot;Run&quot;,
+    &quot;npm.android:release.executor&quot;: &quot;Run&quot;,
+    &quot;npm.preset.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/assets/icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/examples" />
+      <recent name="$PROJECT_DIR$/builds" />
+      <recent name="$PROJECT_DIR$/services" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.android:preview-apk">
+    <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="&lt;LoginScreen /&gt;" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/__tests__/LoginTest-test.tsx" />
+      <test-names>
+        <test-name value="&lt;LoginScreen /&gt;" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="&lt;LoginScreen /&gt;.Text renders correctly on HomeScreen" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/__tests__/LoginTest-test.tsx" />
+      <test-names>
+        <test-name value="&lt;LoginScreen /&gt;" />
+        <test-name value="Text renders correctly on HomeScreen" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="android" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="android" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="android:preview-apk" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="android:preview-apk" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.android:preview-apk" />
+        <item itemvalue="npm.android" />
+        <item itemvalue="Jest.All Tests" />
+        <item itemvalue="Jest.&lt;LoginScreen /&gt;" />
+        <item itemvalue="Jest.&lt;LoginScreen /&gt;.Text renders correctly on HomeScreen" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SwiftWorkspaceSettings">
+    <option name="detectedToolchain" value="true" />
+    <option name="toolchainPathValue" value="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52a0bd65-7929-4598-9287-6bc747b8e8b7" name="Changes" comment="" />
+      <created>1770258389244</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770258389244</updated>
+      <workItem from="1770258390440" duration="7266000" />
+      <workItem from="1770311602214" duration="12739000" />
+      <workItem from="1770329477075" duration="88000" />
+      <workItem from="1770329585387" duration="21318000" />
+      <workItem from="1770392944885" duration="18558000" />
+    </task>
+    <task id="LOCAL-00001" summary="Add Prettier configuration and update app.json with bundle identifier and package">
+      <option name="closed" value="true" />
+      <created>1770263720681</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1770263720681</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add authentication context and provider for user management">
+      <option name="closed" value="true" />
+      <created>1770263744564</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770263744564</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add navigation and screen components for public and private sections">
+      <option name="closed" value="true" />
+      <created>1770263753893</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770263753893</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add authentication and task management services with type definitions">
+      <option name="closed" value="true" />
+      <created>1770313501773</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1770313501773</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add environment configuration and integrate NavigationContainer for improved app structure">
+      <option name="closed" value="true" />
+      <created>1770313523978</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1770313523978</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add LoginForm component with form validation and submission handling">
+      <option name="closed" value="true" />
+      <created>1770317396657</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1770317396657</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add UI Kitten components and form validation for LoginForm">
+      <option name="closed" value="true" />
+      <created>1770318059811</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1770318059811</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add RegisterForm component and update RegisterScreen for user registration">
+      <option name="closed" value="true" />
+      <created>1770318544231</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1770318544231</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Refactor RegisterForm to use Card component and improve layout with LayoutScreen">
+      <option name="closed" value="true" />
+      <created>1770319036102</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1770319036102</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Refactor LoginForm to use Card component and LayoutScreen for improved structure and styling">
+      <option name="closed" value="true" />
+      <created>1770323798506</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770323798506</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add secure storage service and integrate with authentication flow for user login">
+      <option name="closed" value="true" />
+      <created>1770327070467</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1770327070467</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add ProfileScreen with user data display and logout button; refactor TasksScreen and LayoutScreen for improved structure">
+      <option name="closed" value="true" />
+      <created>1770327121895</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1770327121895</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add TasksList and TaskCard components; refactor TasksScreen and LayoutScreen for improved task management and UI">
+      <option name="closed" value="true" />
+      <created>1770328304658</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1770328304658</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Enhance TaskCard component with status management and styling; update TasksList and TasksScreen layout for improved UI">
+      <option name="closed" value="true" />
+      <created>1770328983466</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1770328983466</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add BottomSheet component and integrate task creation and editing; refactor App structure for improved UI and functionality">
+      <option name="closed" value="true" />
+      <created>1770334449096</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1770334449096</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Refactor TaskCreateForm and TaskEditSheet to handle task creation and updates; integrate user authentication and loading states">
+      <option name="closed" value="true" />
+      <created>1770336046444</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1770336046444</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Implement TaskContext and TaskContextProvider for centralized task management; refactor task creation and editing components to utilize context">
+      <option name="closed" value="true" />
+      <created>1770337663961</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1770337663961</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add ThemeContext and ThemeContextProvider for theme management; implement ToggleTheme component and integrate theme switching in App and ProfileScreen">
+      <option name="closed" value="true" />
+      <created>1770345698025</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1770345698025</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Refactor PrivateScreens to integrate theme-based styling and add tab bar icons for Tasks and Profile screens">
+      <option name="closed" value="true" />
+      <created>1770347734203</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1770347734203</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Refactor BottomSheet and TaskCreateForm to integrate BottomSheetInput component; adjust snap points for improved UI">
+      <option name="closed" value="true" />
+      <created>1770349388153</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1770349388153</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add AssetIconsPack for custom icons; update TaskCreateForm and TaskStatusChip to utilize new icons and improve UI responsiveness">
+      <option name="closed" value="true" />
+      <created>1770351998915</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1770351998916</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Refactor TaskCard and TaskCreateForm to integrate icon display based on task status; update styles for improved layout and responsiveness">
+      <option name="closed" value="true" />
+      <created>1770352885653</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1770352885653</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add delete functionality to TaskCard; integrate confirmation alert and update TaskContext for task deletion">
+      <option name="closed" value="true" />
+      <created>1770353923889</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1770353923889</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Implement logout functionality in ButtonLogout; add loading state and secure storage deletion; enhance LoginScreen with theme toggle feature">
+      <option name="closed" value="true" />
+      <created>1770354647521</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1770354647521</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Enhance RegisterScreen with ScrollView for improved layout; ensure content is scrollable on smaller screens">
+      <option name="closed" value="true" />
+      <created>1770354743690</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1770354743690</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Rename TaskCreateForm to TaskForm; update references in TaskCreateSheet and TaskEditSheet for consistency">
+      <option name="closed" value="true" />
+      <created>1770355251435</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1770355251435</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add loading state to Button component; implement secure text entry toggle in RegisterForm and LoginForm; enhance RegisterScreen with loading feedback">
+      <option name="closed" value="true" />
+      <created>1770356137195</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1770356137195</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Fix Spinner status fallback in Button component during loading state">
+      <option name="closed" value="true" />
+      <created>1770356247179</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1770356247179</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Add confirmPassword field to RegisterForm and validate against password">
+      <option name="closed" value="true" />
+      <created>1770356554344</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1770356554344</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Add expo-splash-screen plugin with configuration for splash screen display">
+      <option name="closed" value="true" />
+      <created>1770394713103</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1770394713103</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add eas.json configuration and update package.json for EAS build and testing">
+      <option name="closed" value="true" />
+      <created>1770399357617</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1770399357618</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Refactor AppContent to export as a named function; add unit tests for authentication service and components">
+      <option name="closed" value="true" />
+      <created>1770399368927</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1770399368927</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Add ApiConnect component for local IP input and update instanceAxios to use local IP for API requests">
+      <option name="closed" value="true" />
+      <created>1770400661397</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1770400661397</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Update local API endpoint in .env.development for environment configuration">
+      <option name="closed" value="true" />
+      <created>1770400700664</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1770400700665</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Update app name and version code in app.json; modify eas.json for test APK configuration">
+      <option name="closed" value="true" />
+      <created>1770400857686</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1770400857686</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Add EAS project ID to app.json; update eas.json for preview build configuration and add new npm script for preview APK">
+      <option name="closed" value="true" />
+      <created>1770400929752</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1770400929752</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add ConfigurationAuthSheet component; integrate ApiConnect for local IP input and update ButtonLogout and LoginForm for loading state">
+      <option name="closed" value="true" />
+      <created>1770403115410</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1770403115410</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Remove unused styles from ConfigurationAuthSheet component">
+      <option name="closed" value="true" />
+      <created>1770403137142</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1770403137142</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Add error handling utility and integrate it into login, registration, and task management components">
+      <option name="closed" value="true" />
+      <created>1770406019836</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1770406019836</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Rename LoginTest to RegisterScreenTest and update button text in RegisterForm component">
+      <option name="closed" value="true" />
+      <created>1770406787872</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1770406787872</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Add README.md with setup instructions, features, and usage guidelines">
+      <option name="closed" value="true" />
+      <created>1770407522803</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1770407522803</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Add expo-build-properties dependency and update app.json for Android and iOS configurations; create README-EXAMPLES-APP.md for visual documentation">
+      <option name="closed" value="true" />
+      <created>1770411564765</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1770411564765</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Add expo-build-properties dependency and update app.json for Android and iOS configurations; create README-EXAMPLES-APP.md for visual documentation">
+      <option name="closed" value="true" />
+      <created>1770411573209</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1770411573209</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Add platform comparison section to README-EXAMPLES-APP.md with iOS and Android visuals">
+      <option name="closed" value="true" />
+      <created>1770411680903</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1770411680903</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Add project configuration files for code style and migration settings">
+      <option name="closed" value="true" />
+      <created>1770411708044</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1770411708044</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Fix APK download link in README.md to include .zip extension">
+      <option name="closed" value="true" />
+      <created>1770411984881</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1770411984881</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor TaskCard and TaskCreateForm to integrate icon display based on task status; update styles for improved layout and responsiveness" />
+    <MESSAGE value="Add delete functionality to TaskCard; integrate confirmation alert and update TaskContext for task deletion" />
+    <MESSAGE value="Implement logout functionality in ButtonLogout; add loading state and secure storage deletion; enhance LoginScreen with theme toggle feature" />
+    <MESSAGE value="Enhance RegisterScreen with ScrollView for improved layout; ensure content is scrollable on smaller screens" />
+    <MESSAGE value="Rename TaskCreateForm to TaskForm; update references in TaskCreateSheet and TaskEditSheet for consistency" />
+    <MESSAGE value="Add loading state to Button component; implement secure text entry toggle in RegisterForm and LoginForm; enhance RegisterScreen with loading feedback" />
+    <MESSAGE value="Fix Spinner status fallback in Button component during loading state" />
+    <MESSAGE value="Add confirmPassword field to RegisterForm and validate against password" />
+    <MESSAGE value="Add expo-splash-screen plugin with configuration for splash screen display" />
+    <MESSAGE value="Add eas.json configuration and update package.json for EAS build and testing" />
+    <MESSAGE value="Refactor AppContent to export as a named function; add unit tests for authentication service and components" />
+    <MESSAGE value="Add ApiConnect component for local IP input and update instanceAxios to use local IP for API requests" />
+    <MESSAGE value="Update local API endpoint in .env.development for environment configuration" />
+    <MESSAGE value="Update app name and version code in app.json; modify eas.json for test APK configuration" />
+    <MESSAGE value="Add EAS project ID to app.json; update eas.json for preview build configuration and add new npm script for preview APK" />
+    <MESSAGE value="Add ConfigurationAuthSheet component; integrate ApiConnect for local IP input and update ButtonLogout and LoginForm for loading state" />
+    <MESSAGE value="Remove unused styles from ConfigurationAuthSheet component" />
+    <MESSAGE value="Add error handling utility and integrate it into login, registration, and task management components" />
+    <MESSAGE value="Rename LoginTest to RegisterScreenTest and update button text in RegisterForm component" />
+    <MESSAGE value="Add README.md with setup instructions, features, and usage guidelines" />
+    <MESSAGE value="Add expo-build-properties package and update app.json for Android and iOS configurations; create README-EXAMPLES-APP.md with visual examples of app features" />
+    <MESSAGE value="Add expo-build-properties dependency and update app.json for Android and iOS configurations; create README-EXAMPLES-APP.md for visual documentation" />
+    <MESSAGE value="Add platform comparison section to README-EXAMPLES-APP.md with iOS and Android visuals" />
+    <MESSAGE value="Add project configuration files for code style and migration settings" />
+    <MESSAGE value="Fix APK download link in README.md to include .zip extension" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix APK download link in README.md to include .zip extension" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
