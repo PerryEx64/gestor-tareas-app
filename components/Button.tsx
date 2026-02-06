@@ -16,7 +16,9 @@ export const Button = (props: ButtonProps) => {
       style={{ borderRadius: 15 }}
       disabled={isLoading}
       accessoryRight={
-        isLoading ? <Spinner status={restProps.status} /> : undefined
+        isLoading ? (
+          <Spinner status={restProps.status ?? 'primary'} />
+        ) : undefined
       }
     />
   );
