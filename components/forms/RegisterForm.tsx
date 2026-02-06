@@ -1,8 +1,8 @@
 import { Controller, useForm } from 'react-hook-form';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import { Text, Card } from '@ui-kitten/components';
+import { Text, Card, Icon } from '@ui-kitten/components';
 import { RegisterBody } from '../../types/auth.types';
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Input } from '../Input';
 import { Button } from '../Button';
 import {
@@ -15,10 +15,11 @@ import { LayoutScreen } from '../layouts/LayoutScreen';
 
 interface RegisterFormProps {
   onSubmit: (data: RegisterBody) => void;
+  isLoading: boolean;
 }
 
 export const RegisterForm = (props: RegisterFormProps) => {
-  const { onSubmit } = props;
+  const { onSubmit, isLoading } = props;
   const {
     control,
     handleSubmit,
@@ -41,6 +42,20 @@ export const RegisterForm = (props: RegisterFormProps) => {
       </Text>
     );
   };
+
+  const toggleSecureEntry = (): void => {
+    setSecureTextEntry(!secureTextEntry);
+  };
+
+  const renderIcon = (props: any): ReactElement => (
+    <TouchableWithoutFeedback onPress={toggleSecureEntry}>
+      <Icon
+        {...props}
+        pack="assets"
+        name={secureTextEntry ? 'eye_off' : 'eye'}
+      />
+    </TouchableWithoutFeedback>
+  );
 
   return (
     <LayoutScreen>
@@ -140,6 +155,7 @@ export const RegisterForm = (props: RegisterFormProps) => {
                   status={errors.password ? 'danger' : 'basic'}
                   caption={renderCaption(errors.password?.message)}
                   secureTextEntry={secureTextEntry}
+                  accessoryRight={renderIcon}
                   autoCapitalize="none"
                   autoComplete="password"
                   textContentType="password"
@@ -149,7 +165,11 @@ export const RegisterForm = (props: RegisterFormProps) => {
             }}
           />
 
-          <Button onPress={handleSubmit(onSubmit)} size="large">
+          <Button
+            onPress={handleSubmit(onSubmit)}
+            size="large"
+            isLoading={isLoading}
+          >
             Crear Cuenta
           </Button>
         </View>

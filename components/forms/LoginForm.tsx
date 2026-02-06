@@ -1,8 +1,8 @@
 import { Controller, useForm } from 'react-hook-form';
 import { View, StyleSheet, TouchableWithoutFeedback } from 'react-native';
-import { Text, Card, Spinner } from '@ui-kitten/components';
+import { Text, Card, Spinner, Icon } from '@ui-kitten/components';
 import { FormLoginProps } from '../../types/auth.types';
-import { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Input } from '../Input';
 import { Button } from '../Button';
 import { emailValidation, passwordValidation } from '../../utils/rules-form';
@@ -37,6 +37,20 @@ export const LoginForm = (props: LoginFormProps) => {
       </Text>
     );
   };
+
+  const toggleSecureEntry = (): void => {
+    setSecureTextEntry(!secureTextEntry);
+  };
+
+  const renderIcon = (props: any): ReactElement => (
+    <TouchableWithoutFeedback onPress={toggleSecureEntry}>
+      <Icon
+        {...props}
+        pack="assets"
+        name={secureTextEntry ? 'eye_off' : 'eye'}
+      />
+    </TouchableWithoutFeedback>
+  );
 
   return (
     <LayoutScreen>
@@ -88,6 +102,7 @@ export const LoginForm = (props: LoginFormProps) => {
                   onBlur={onBlur}
                   onChangeText={onChange}
                   status={errors.password ? 'danger' : 'basic'}
+                  accessoryRight={renderIcon}
                   caption={renderCaption(errors.password?.message)}
                   secureTextEntry={secureTextEntry}
                   autoCapitalize="none"

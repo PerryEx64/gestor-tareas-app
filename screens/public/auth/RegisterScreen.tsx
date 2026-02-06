@@ -7,11 +7,44 @@ import {
 import { LayoutScreen } from '../../../components/layouts/LayoutScreen';
 import { RegisterForm } from '../../../components/forms/RegisterForm';
 import { RegisterBody } from '../../../types/auth.types';
+import { useCallback, useContext, useState } from 'react';
+import { onLogin, onRegister } from '../../../services/AuthService';
+import { saveStorageSecure } from '../../../services/StorageService';
+import Toast from 'react-native-toast-message';
+import { AuthContext } from '../../../store/AuthContext';
 
 export const RegisterScreen = () => {
-  const handleRegister = (data: RegisterBody) => {
-    console.log('Register data:', data);
-  };
+  const { setUser } = useContext(AuthContext);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleRegister = useCallback(
+    async (data: RegisterBody) => {
+      setIsLoading(true);
+
+      try {
+        const { user, token } = await onRegister(data);
+
+        setUser(user);
+        await saveStorageSecure('accessToken', token);
+        await saveStorageSecure('user', JSON.stringify(user));
+
+        Toast.show({
+          type: 'success',
+          text1: 'Inicio de sesión exitoso',
+          text2: `¡Bienvenido de nuevo, ${user.firstname}!`,
+        });
+      } catch (e: any) {
+        Toast.show({
+          type: 'error',
+          text1: 'Error de inicio de sesión',
+          text2: 'Por favor, verifica tus credenciales e intenta nuevamente.',
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [onLogin, setUser]
+  );
 
   return (
     <LayoutScreen level="1">
@@ -20,7 +53,7 @@ export const RegisterScreen = () => {
         style={styles.container}
       >
         <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
-          <RegisterForm onSubmit={handleRegister} />
+          <RegisterForm onSubmit={handleRegister} isLoading={isLoading} />
         </ScrollView>
       </KeyboardAvoidingView>
     </LayoutScreen>

@@ -15,5 +15,7 @@ export const AssetIconsPack = {
       require('../../assets/icons/brain_in_progress.png')
     ),
     delete: IconProvider(require('../../assets/icons/trash.png')),
+    eye: IconProvider(require('../../assets/icons/eye_open.png')),
+    eye_off: IconProvider(require('../../assets/icons/eye_close.png')),
   },
 };
