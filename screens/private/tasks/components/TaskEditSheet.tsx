@@ -5,6 +5,7 @@ import Toast from 'react-native-toast-message';
 import { updateTask } from '../../../../services/TasksService';
 import { useState } from 'react';
 import { useUserData } from '../../../../hooks/useUser';
+import { useTasks } from '../../../../hooks/useTasks';
 
 interface TaskEditSheetProps {
   task: Task | null;
@@ -15,6 +16,7 @@ export const TaskEditSheet = (props: TaskEditSheetProps) => {
   const { task, isOpen, onOpen } = props;
   const [isLoading, setIsLoading] = useState(false);
   const userData = useUserData();
+  const { onUpdateLocalTask } = useTasks();
 
   const onUpdateTask = async (data: TaskBodyUpdate) => {
     try {
@@ -27,11 +29,18 @@ export const TaskEditSheet = (props: TaskEditSheetProps) => {
       }
 
       setIsLoading(true);
-      await updateTask(data);
+      const newTask = await updateTask(data);
+      onUpdateLocalTask(newTask);
       onOpen(false);
       Toast.show({
         type: 'success',
         text1: 'Tarea actualizada exitosamente',
+      });
+    } catch (error) {
+      Toast.show({
+        type: 'error',
+        text1: 'Error al actualizar la tarea',
+        text2: 'Por favor, intenta nuevamente.',
       });
     } finally {
       setIsLoading(false);

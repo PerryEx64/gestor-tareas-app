@@ -18,28 +18,16 @@ export const getTasks = async (userId: string) => {
 };
 
 export const createTask = async (body: TaskBodyCreate) => {
-  try {
-    const https = await getAutenticate();
-    const { data } = await https.post<Task>(`/tasks`, body);
-    return data;
-  } catch (error) {
-    Toast.show({
-      type: 'error',
-      text1: 'No se pudo crear la tarea',
-      text2: 'Por favor, intenta nuevamente.',
-    });
-  }
+  const https = await getAutenticate();
+  const { data } = await https.post<Task>(`/tasks`, body);
+  return data;
 };
 
 export const updateTask = async (body: TaskBodyUpdate) => {
-  try {
-    const { id, ...rest } = body;
-    const https = await getAutenticate();
-    const { data } = await https.put<Task>(`/tasks/${id}`, rest);
-    return data;
-  } catch (error) {
-    console.log('Error updating task:', JSON.stringify(error));
-  }
+  const { id, ...rest } = body;
+  const https = await getAutenticate();
+  const { data } = await https.put<Task>(`/tasks/${id}`, rest);
+  return data;
 };
 
 export const deleteTask = async (taskId: string) => {

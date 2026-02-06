@@ -4,13 +4,10 @@ import { TaskCard } from './TaskCard';
 import { Spinner } from '@ui-kitten/components';
 import { TaskEditSheet } from './TaskEditSheet';
 import { useEffect, useState } from 'react';
+import { useTasks } from '../../../../hooks/useTasks';
 
-interface TasksListProps {
-  data: Task[];
-  isLoading: boolean;
-}
-export const TasksList = (props: TasksListProps) => {
-  const { data, isLoading } = props;
+export const TasksList = () => {
+  const { tasks, isLoading } = useTasks();
   const [taskSelected, setTaskSelected] = useState<Task | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,7 +33,7 @@ export const TasksList = (props: TasksListProps) => {
   return (
     <>
       <FlatList
-        data={data}
+        data={tasks}
         style={{ padding: 5 }}
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (

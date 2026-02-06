@@ -7,11 +7,13 @@ import Toast from 'react-native-toast-message';
 import { TaskBodyCreate } from '../../../../types/tasks.types';
 import { createTask } from '../../../../services/TasksService';
 import { useUserData } from '../../../../hooks/useUser';
+import { useTasks } from '../../../../hooks/useTasks';
 
 export const TaskCreateSheet = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const userData = useUserData();
+  const { onAddLocalTask } = useTasks();
   const onOpenSheet = () => {
     setIsOpen(true);
   };
@@ -27,11 +29,18 @@ export const TaskCreateSheet = () => {
       }
 
       setIsLoading(true);
-      await createTask({ ...data, user_id: userData.id });
+      const newTask = await createTask({ ...data, user_id: userData.id });
+      onAddLocalTask(newTask);
       setIsOpen(false);
       Toast.show({
         type: 'success',
         text1: 'Tarea creada exitosamente',
+      });
+    } catch (error) {
+      Toast.show({
+        type: 'error',
+        text1: 'Error al crear la tarea',
+        text2: 'Por favor, intenta nuevamente.',
       });
     } finally {
       setIsLoading(false);
