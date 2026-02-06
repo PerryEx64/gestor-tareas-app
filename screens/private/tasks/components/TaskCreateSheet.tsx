@@ -2,7 +2,7 @@ import { BottomSheet } from '../../../../components/BottomSheet';
 import { useState } from 'react';
 import { View } from 'react-native';
 import { Button } from '../../../../components/Button';
-import { TaskCreateForm } from '../../../../components/forms/TaskCreateForm';
+import { TaskForm } from '../../../../components/forms/TaskForm';
 import Toast from 'react-native-toast-message';
 import { TaskBodyCreate } from '../../../../types/tasks.types';
 import { createTask } from '../../../../services/TasksService';
@@ -51,7 +51,7 @@ export const TaskCreateSheet = () => {
     <View>
       <Button onPress={onOpenSheet}>Crear Tarea</Button>
       <BottomSheet isOpen={isOpen} onOpen={setIsOpen} snapPoints={['67%']}>
-        <TaskCreateForm
+        <TaskForm
           onSubmit={(data) => onCreateTask(data as TaskBodyCreate)}
           isLoading={isLoading}
           mode="create"

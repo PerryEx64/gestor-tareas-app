@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { defaultValidate } from '../../utils/rules-form';
 import { TaskStatusChip } from '../../screens/private/tasks/components/TaskStatusChip';
 import { BottomSheetInput } from '../BottomSheetInput';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 interface TaskCreateFormProps {
   onSubmit: (data: TaskBodyCreate | TaskBodyUpdate) => void;
@@ -16,7 +16,7 @@ interface TaskCreateFormProps {
 }
 type IconName = 'think' | 'pending' | 'in_progress' | 'completed';
 
-export const TaskCreateForm = (props: TaskCreateFormProps) => {
+export const TaskForm = (props: TaskCreateFormProps) => {
   const { onSubmit, isLoading, initialValues, mode = 'create' } = props;
   const {
     control,

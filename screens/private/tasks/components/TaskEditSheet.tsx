@@ -1,5 +1,5 @@
 import { BottomSheet } from '../../../../components/BottomSheet';
-import { TaskCreateForm } from '../../../../components/forms/TaskCreateForm';
+import { TaskForm } from '../../../../components/forms/TaskForm';
 import { Task, TaskBodyUpdate } from '../../../../types/tasks.types';
 import Toast from 'react-native-toast-message';
 import { updateTask } from '../../../../services/TasksService';
@@ -53,7 +53,7 @@ export const TaskEditSheet = (props: TaskEditSheetProps) => {
 
   return (
     <BottomSheet isOpen={isOpen} onOpen={onOpen} snapPoints={['67%']}>
-      <TaskCreateForm
+      <TaskForm
         onSubmit={(data) => onUpdateTask(data as TaskBodyUpdate)}
         mode="edit"
         isLoading={isLoading}
