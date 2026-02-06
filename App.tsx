@@ -11,6 +11,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { ThemeContextProvider } from './store/ThemeContextProvider';
 import { useTheme } from './hooks/useTheme';
+import { AssetIconsPack } from './components/icons/IconProvider';
 
 const AppContent = () => {
   const { theme } = useTheme();
@@ -24,7 +25,7 @@ const AppContent = () => {
         <NavigationContainer>
           <SafeAreaProvider>
             <AuthContextProvider>
-              <IconRegistry icons={EvaIconsPack} />
+              <IconRegistry icons={[EvaIconsPack, AssetIconsPack]} />
               <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
               <AppNavigation />
               <Toast />

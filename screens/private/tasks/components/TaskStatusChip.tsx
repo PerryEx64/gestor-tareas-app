@@ -1,18 +1,30 @@
 import { TaskStatusType } from '../../../../types/tasks.types';
-import { FlatList, View } from 'react-native';
+import { View } from 'react-native';
 import { Chip } from '../../../../components/Chip';
 import { ButtonProps, Text } from '@ui-kitten/components';
+import { BottomSheetFlatList } from '@gorhom/bottom-sheet';
 
 interface SelectedStatus {
   label: string;
   value: TaskStatusType;
   color: ButtonProps['status'];
+  icon?: string;
 }
 
 const STATUS: SelectedStatus[] = [
-  { label: 'Pendiente', value: 'pending', color: 'warning' },
-  { label: 'En Progreso', value: 'in_progress', color: 'info' },
-  { label: 'Completada', value: 'completed', color: 'success' },
+  { label: 'Pendiente', value: 'pending', color: 'warning', icon: 'pending' },
+  {
+    label: 'En Progreso',
+    value: 'in_progress',
+    color: 'info',
+    icon: 'in_progress',
+  },
+  {
+    label: 'Completada',
+    value: 'completed',
+    color: 'success',
+    icon: 'completed',
+  },
 ];
 
 interface TaskStatusChipProps {
@@ -24,18 +36,19 @@ export const TaskStatusChip = (props: TaskStatusChipProps) => {
   const { value, onChange, messageError } = props;
   return (
     <View>
-      <FlatList
+      <BottomSheetFlatList
         style={{ marginVertical: 10 }}
-        keyExtractor={(item) => item.value}
+        keyExtractor={(item: SelectedStatus) => item.value}
         contentContainerStyle={{ gap: 8 }}
         data={STATUS}
         horizontal={true}
-        renderItem={({ item }) => {
+        renderItem={({ item }: { item: SelectedStatus }) => {
           return (
             <Chip
               selected={value == item.value}
               color={item.color}
               label={item.label}
+              icon={item.icon}
               onPress={() => onChange(item.value)}
             />
           );

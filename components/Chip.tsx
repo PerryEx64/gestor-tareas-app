@@ -1,14 +1,15 @@
 import { Button } from './Button';
-import { ButtonProps } from '@ui-kitten/components';
+import { ButtonProps, Icon } from '@ui-kitten/components';
 
 interface ChipProps {
   label: string;
   color: ButtonProps['status'];
   onPress?: () => void;
   selected?: boolean;
+  icon?: string;
 }
 export const Chip = (props: ChipProps) => {
-  const { label, onPress, selected, color = 'warning' } = props;
+  const { label, onPress, selected, color = 'warning', icon } = props;
 
   return (
     <Button
@@ -16,6 +17,9 @@ export const Chip = (props: ChipProps) => {
       appearance={selected ? 'filled' : 'ghost'}
       status={selected ? color : 'basic'}
       onPress={onPress}
+      accessoryLeft={(props) => {
+        return icon ? <Icon {...props} name={icon} pack="assets" /> : <></>;
+      }}
     >
       {label}
     </Button>

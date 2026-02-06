@@ -3,7 +3,6 @@ import {
   BottomSheetModal,
   BottomSheetView,
   BottomSheetBackdrop,
-  BottomSheetTextInput,
 } from '@gorhom/bottom-sheet';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -37,6 +36,7 @@ export const BottomSheet = (props: BottomSheetProps) => {
       index={targetSnapPoint ?? 0}
       snapPoints={snapPoints}
       bottomInset={bottom}
+      enableDynamicSizing={false}
       backdropComponent={(props) => (
         <BottomSheetBackdrop
           {...props}

@@ -1,13 +1,12 @@
 import { Controller, useForm } from 'react-hook-form';
 import { View, StyleSheet } from 'react-native';
-import { Layout, Text } from '@ui-kitten/components';
+import { Icon, Layout, Text } from '@ui-kitten/components';
 import { TaskBodyCreate, TaskBodyUpdate } from '../../types/tasks.types';
-import { Input } from '../Input';
 import { Button } from '../Button';
 import { defaultValidate } from '../../utils/rules-form';
 import { TaskStatusChip } from '../../screens/private/tasks/components/TaskStatusChip';
-import { BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { BottomSheetInput } from '../BottomSheetInput';
+import { useEffect, useMemo, useState } from 'react';
 
 interface TaskCreateFormProps {
   onSubmit: (data: TaskBodyCreate | TaskBodyUpdate) => void;
@@ -15,13 +14,16 @@ interface TaskCreateFormProps {
   initialValues?: TaskBodyUpdate;
   mode?: 'create' | 'edit';
 }
+type IconName = 'think' | 'pending' | 'in_progress' | 'completed';
 
 export const TaskCreateForm = (props: TaskCreateFormProps) => {
   const { onSubmit, isLoading, initialValues, mode = 'create' } = props;
+  const [iconName, setIconName] = useState<IconName>('think');
   const {
     control,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm<TaskBodyCreate>({
     defaultValues: initialValues as any,
   });
@@ -37,11 +39,31 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
     );
   };
 
+  const currentStatus = watch('status');
+
+  const getIconName: IconName = useMemo(() => {
+    switch (currentStatus) {
+      case 'pending':
+        return 'pending';
+      case 'in_progress':
+        return 'in_progress';
+      case 'completed':
+        return 'completed';
+      default:
+        return 'think';
+    }
+  }, [currentStatus]);
+
   const isEditMode = mode === 'edit';
 
   return (
     <Layout style={styles.container}>
       <View style={styles.header}>
+        <Icon
+          name={getIconName}
+          pack="assets"
+          style={{ width: 60, height: 60 }}
+        />
         <Text category="h5" style={styles.title}>
           {isEditMode ? 'Editar Tarea' : 'Nueva Tarea'}
         </Text>
