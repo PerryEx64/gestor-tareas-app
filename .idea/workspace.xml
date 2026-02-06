@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52a0bd65-7929-4598-9287-6bc747b8e8b7" name="Changes" comment="Refactor project structure by renaming files and directories; add environment and configuration files">
+    <list default="true" id="52a0bd65-7929-4598-9287-6bc747b8e8b7" name="Changes" comment="Add initial README.md with project structure, quick start guide, configuration details, and troubleshooting tips">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile-app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile-app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile-app/utils/error-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mobile-app/utils/error-handler.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +61,12 @@
     "npm.android (1).executor": "Run",
     "npm.android.executor": "Run",
     "npm.android:prebuild.executor": "Run",
+    "npm.android:preview-apk (1).executor": "Run",
     "npm.android:preview-apk.executor": "Run",
     "npm.android:release.executor": "Run",
     "npm.migration:migrate.executor": "Run",
     "npm.preset.executor": "Run",
+    "npm.seed:migrate.executor": "Run",
     "npm.test.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Volumes/perryex/projects/gestor-tareas-app/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
@@ -87,15 +87,7 @@
       <recent name="$PROJECT_DIR$/services" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.android (1)">
-    <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.seed:migrate">
     <configuration name="android (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/mobile-app/package.json" />
       <command value="run" />
@@ -106,11 +98,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="android" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="android:preview-apk (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile-app/package.json" />
       <command value="run" />
       <scripts>
-        <script value="android" />
+        <script value="android:preview-apk" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -136,13 +128,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="seed:migrate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/backend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="seed:migrate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.seed:migrate" />
+        <item itemvalue="npm.android:preview-apk (1)" />
         <item itemvalue="npm.android (1)" />
         <item itemvalue="npm.migration:migrate" />
         <item itemvalue="npm.android:preview-apk" />
-        <item itemvalue="npm.android" />
-        <item itemvalue="Jest.All Tests" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +172,7 @@
       <workItem from="1770311602214" duration="12739000" />
       <workItem from="1770329477075" duration="88000" />
       <workItem from="1770329585387" duration="21318000" />
-      <workItem from="1770392944885" duration="20419000" />
+      <workItem from="1770392944885" duration="21733000" />
     </task>
     <task id="LOCAL-00001" summary="Add Prettier configuration and update app.json with bundle identifier and package">
       <option name="closed" value="true" />
@@ -548,15 +550,29 @@
       <option name="project" value="LOCAL" />
       <updated>1770412499602</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Add network error handling to error-handler; update App.tsx to reposition Toast component; create modules.xml for project configuration">
+      <option name="closed" value="true" />
+      <created>1770414248037</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1770414248037</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Add initial README.md with project structure, quick start guide, configuration details, and troubleshooting tips">
+      <option name="closed" value="true" />
+      <created>1770414495144</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1770414495144</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add delete functionality to TaskCard; integrate confirmation alert and update TaskContext for task deletion" />
-    <MESSAGE value="Implement logout functionality in ButtonLogout; add loading state and secure storage deletion; enhance LoginScreen with theme toggle feature" />
     <MESSAGE value="Enhance RegisterScreen with ScrollView for improved layout; ensure content is scrollable on smaller screens" />
     <MESSAGE value="Rename TaskCreateForm to TaskForm; update references in TaskCreateSheet and TaskEditSheet for consistency" />
     <MESSAGE value="Add loading state to Button component; implement secure text entry toggle in RegisterForm and LoginForm; enhance RegisterScreen with loading feedback" />
@@ -580,7 +596,9 @@
     <MESSAGE value="Add project configuration files for code style and migration settings" />
     <MESSAGE value="Fix APK download link in README.md to include .zip extension" />
     <MESSAGE value="Refactor project structure by renaming files and directories; add environment and configuration files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor project structure by renaming files and directories; add environment and configuration files" />
+    <MESSAGE value="Add network error handling to error-handler; update App.tsx to reposition Toast component; create modules.xml for project configuration" />
+    <MESSAGE value="Add initial README.md with project structure, quick start guide, configuration details, and troubleshooting tips" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add initial README.md with project structure, quick start guide, configuration details, and troubleshooting tips" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
