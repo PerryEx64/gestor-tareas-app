@@ -6,6 +6,9 @@ import { onLogin } from '../../../services/AuthService';
 import { AuthContext } from '../../../store/AuthContext';
 import { saveStorageSecure } from '../../../services/StorageService';
 import Toast from 'react-native-toast-message';
+import { StyleSheet, View } from 'react-native';
+import { Card, Text } from '@ui-kitten/components';
+import { ToggleTheme } from '../../../components/ToggleTheme';
 
 export const LoginScreen = () => {
   const { setUser } = useContext(AuthContext);
@@ -52,6 +55,24 @@ export const LoginScreen = () => {
   return (
     <LayoutScreen level="1">
       <LoginForm onSubmit={onSubmitLogin} isLoading={isLoading} />
+      <Card style={styles.card} disabled>
+        <ToggleTheme />
+      </Card>
     </LayoutScreen>
   );
 };
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 24,
+    marginBottom: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 12,
+    elevation: 5,
+  },
+});

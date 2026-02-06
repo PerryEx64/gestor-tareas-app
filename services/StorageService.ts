@@ -9,3 +9,7 @@ export async function saveStorageSecure(key: StorageKeys, value: string) {
 export async function getStorageSecure(key: StorageKeys) {
   return await SecureStore.getItemAsync(key);
 }
+
+export async function deleteStorageSecure(key: StorageKeys) {
+  await SecureStore.deleteItemAsync(key);
+}
