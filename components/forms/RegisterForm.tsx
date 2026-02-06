@@ -198,10 +198,11 @@ export const RegisterForm = (props: RegisterFormProps) => {
 
           <Button
             onPress={handleSubmit(onSubmit)}
+            testID="register-button"
             size="large"
             isLoading={isLoading}
           >
-            Crear Cuenta
+            Registrar Cuenta
           </Button>
         </View>
       </Card>
