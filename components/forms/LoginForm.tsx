@@ -73,6 +73,7 @@ export const LoginForm = (props: LoginFormProps) => {
               return (
                 <Input
                   value={value}
+                  testID="email-input"
                   label="Correo electrónico"
                   placeholder="ejemplo@correo.com"
                   onBlur={onBlur}
@@ -97,6 +98,7 @@ export const LoginForm = (props: LoginFormProps) => {
               return (
                 <Input
                   value={value}
+                  testID="password-input"
                   label="Contraseña"
                   placeholder="Ingresa tu contraseña"
                   onBlur={onBlur}
@@ -124,6 +126,7 @@ export const LoginForm = (props: LoginFormProps) => {
 
           <Button
             onPress={handleSubmit(onSubmit)}
+            testID="login-button"
             disabled={isLoading}
             accessoryRight={isLoading ? <Spinner size="small" /> : undefined}
             size="large"

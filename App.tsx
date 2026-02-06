@@ -19,7 +19,7 @@ SplashScreen.setOptions({
   fade: true,
 });
 
-const AppContent = () => {
+export const AppContent = () => {
   const { theme } = useTheme();
 
   return (
