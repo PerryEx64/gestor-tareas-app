@@ -34,10 +34,10 @@ export const AppContent = () => {
               <IconRegistry icons={[EvaIconsPack, AssetIconsPack]} />
               <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
               <AppNavigation />
-              <Toast />
             </AuthContextProvider>
           </SafeAreaProvider>
         </NavigationContainer>
+        <Toast position={'top'} />
       </BottomSheetModalProvider>
     </ApplicationProvider>
   );

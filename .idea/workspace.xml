@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52a0bd65-7929-4598-9287-6bc747b8e8b7" name="Changes" comment="Fix APK download link in README.md to include .zip extension" />
+    <list default="true" id="52a0bd65-7929-4598-9287-6bc747b8e8b7" name="Changes" comment="Refactor project structure by renaming files and directories; add environment and configuration files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile-app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile-app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile-app/utils/error-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mobile-app/utils/error-handler.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,53 +37,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Jest.&lt;LoginScreen /&gt;.Text renders correctly on HomeScreen.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.&lt;LoginScreen /&gt;.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.&lt;LoginScreen /&gt;.should enable login button when inputs are filled.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.All Tests.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Auth Service Tests.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Login Service Tests.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.Login functionality.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.onSubmitLogin.executor&quot;: &quot;Run&quot;,
-    &quot;Jest.useUserData.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/assets&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/node_modules/jest&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.android.executor&quot;: &quot;Run&quot;,
-    &quot;npm.android:prebuild.executor&quot;: &quot;Run&quot;,
-    &quot;npm.android:preview-apk.executor&quot;: &quot;Run&quot;,
-    &quot;npm.android:release.executor&quot;: &quot;Run&quot;,
-    &quot;npm.preset.executor&quot;: &quot;Run&quot;,
-    &quot;npm.test.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Volumes/perryex/projects/gestor-tareas-app/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Jest.<LoginScreen />.Text renders correctly on HomeScreen.executor": "Run",
+    "Jest.<LoginScreen />.executor": "Run",
+    "Jest.<LoginScreen />.should enable login button when inputs are filled.executor": "Run",
+    "Jest.All Tests.executor": "Run",
+    "Jest.Auth Service Tests.executor": "Run",
+    "Jest.Login Service Tests.executor": "Run",
+    "Jest.Login functionality.executor": "Run",
+    "Jest.onSubmitLogin.executor": "Run",
+    "Jest.useUserData.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Volumes/perryex/projects/gestor-tareas-app/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/Volumes/perryex/projects/gestor-tareas-app/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "npm.android (1).executor": "Run",
+    "npm.android.executor": "Run",
+    "npm.android:prebuild.executor": "Run",
+    "npm.android:preview-apk.executor": "Run",
+    "npm.android:release.executor": "Run",
+    "npm.migration:migrate.executor": "Run",
+    "npm.preset.executor": "Run",
+    "npm.test.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Volumes/perryex/projects/gestor-tareas-app/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/Volumes/perryex/projects/gestor-tareas-app/mobile-app/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/assets/icons" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mobile-app" />
       <recent name="$PROJECT_DIR$/assets/examples" />
       <recent name="$PROJECT_DIR$/builds" />
       <recent name="$PROJECT_DIR$/services" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.android:preview-apk">
+  <component name="RunManager" selected="npm.android (1)">
     <configuration name="All Tests" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/node_modules/jest" />
@@ -88,29 +96,14 @@
       <scope-kind value="ALL" />
       <method v="2" />
     </configuration>
-    <configuration name="&lt;LoginScreen /&gt;" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="android (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile-app/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="android" />
+      </scripts>
       <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="SUITE" />
-      <test-file value="$PROJECT_DIR$/__tests__/LoginTest-test.tsx" />
-      <test-names>
-        <test-name value="&lt;LoginScreen /&gt;" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="&lt;LoginScreen /&gt;.Text renders correctly on HomeScreen" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/__tests__/LoginTest-test.tsx" />
-      <test-names>
-        <test-name value="&lt;LoginScreen /&gt;" />
-        <test-name value="Text renders correctly on HomeScreen" />
-      </test-names>
       <method v="2" />
     </configuration>
     <configuration name="android" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -133,13 +126,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="migration:migrate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/backend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="migration:migrate" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.android (1)" />
+        <item itemvalue="npm.migration:migrate" />
         <item itemvalue="npm.android:preview-apk" />
         <item itemvalue="npm.android" />
         <item itemvalue="Jest.All Tests" />
-        <item itemvalue="Jest.&lt;LoginScreen /&gt;" />
-        <item itemvalue="Jest.&lt;LoginScreen /&gt;.Text renders correctly on HomeScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -167,7 +170,7 @@
       <workItem from="1770311602214" duration="12739000" />
       <workItem from="1770329477075" duration="88000" />
       <workItem from="1770329585387" duration="21318000" />
-      <workItem from="1770392944885" duration="18558000" />
+      <workItem from="1770392944885" duration="20419000" />
     </task>
     <task id="LOCAL-00001" summary="Add Prettier configuration and update app.json with bundle identifier and package">
       <option name="closed" value="true" />
@@ -537,14 +540,21 @@
       <option name="project" value="LOCAL" />
       <updated>1770411984881</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Refactor project structure by renaming files and directories; add environment and configuration files">
+      <option name="closed" value="true" />
+      <created>1770412499602</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1770412499602</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor TaskCard and TaskCreateForm to integrate icon display based on task status; update styles for improved layout and responsiveness" />
     <MESSAGE value="Add delete functionality to TaskCard; integrate confirmation alert and update TaskContext for task deletion" />
     <MESSAGE value="Implement logout functionality in ButtonLogout; add loading state and secure storage deletion; enhance LoginScreen with theme toggle feature" />
     <MESSAGE value="Enhance RegisterScreen with ScrollView for improved layout; ensure content is scrollable on smaller screens" />
@@ -569,7 +579,8 @@
     <MESSAGE value="Add platform comparison section to README-EXAMPLES-APP.md with iOS and Android visuals" />
     <MESSAGE value="Add project configuration files for code style and migration settings" />
     <MESSAGE value="Fix APK download link in README.md to include .zip extension" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix APK download link in README.md to include .zip extension" />
+    <MESSAGE value="Refactor project structure by renaming files and directories; add environment and configuration files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor project structure by renaming files and directories; add environment and configuration files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

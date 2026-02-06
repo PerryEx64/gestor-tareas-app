@@ -6,6 +6,11 @@ export const handlerError = (error: any) => {
     const apiError = error.response.data as ApiError;
     return getMessageError(apiError);
   }
+
+  if(error.code === 'ERR_NETWORK') {
+    return 'Error de red. Por favor, verifica tu conexión a internet.';
+  }
+
   return 'Error desconocido';
 };
 
