@@ -21,8 +21,7 @@ export const ButtonLogout = () => {
   }, []);
   return (
     <Button
-      disabled={isLoading}
-      accessoryRight={isLoading ? <Spinner /> : undefined}
+      isLoading={isLoading}
       onPress={handleLogout}
       status="danger"
       activeOpacity={0.7}

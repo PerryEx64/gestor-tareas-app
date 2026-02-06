@@ -6,7 +6,6 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import { useUserData } from '../../../hooks/useUser';
-import { LayoutScreen } from '../../../components/layouts/LayoutScreen';
 import { Card, Layout, Text } from '@ui-kitten/components';
 import { ButtonLogout } from '../../../components/ButtonLogout';
 import { ToggleTheme } from '../../../components/ToggleTheme';

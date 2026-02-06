@@ -127,7 +127,7 @@ export const LoginForm = (props: LoginFormProps) => {
           <Button
             onPress={handleSubmit(onSubmit)}
             testID="login-button"
-            disabled={isLoading}
+            isLoading={isLoading}
             accessoryRight={isLoading ? <Spinner size="small" /> : undefined}
             size="large"
           >
