@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "gestor-tareas-app",
+    "name": "Gestor Tareas App",
     "slug": "gestor-tareas-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,6 +17,7 @@
       "bundleIdentifier": "com.br1angarcia.gestortareasapp"
     },
     "android": {
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
