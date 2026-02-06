@@ -24,8 +24,8 @@ export const TasksList = () => {
 
   if (isLoading) {
     return (
-      <View style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-        <Spinner size="giant" />
+      <View style={{ alignItems: 'center', flex: 1 }}>
+        <Spinner size="giant" status="warning" />
       </View>
     );
   }

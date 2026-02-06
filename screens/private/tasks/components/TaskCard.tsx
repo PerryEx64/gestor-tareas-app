@@ -1,7 +1,8 @@
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Card, Text } from '@ui-kitten/components';
+import { View, StyleSheet, Pressable } from 'react-native';
+import { Card, Icon, Text } from '@ui-kitten/components';
 import { Task } from '../../../../types/tasks.types';
 import { getStatusColor, getStatusLabel } from '../taskHandlers';
+import { useMemo } from 'react';
 
 interface TaskCardProps {
   task: Task;
@@ -13,8 +14,27 @@ export const TaskCard = (props: TaskCardProps) => {
 
   const isCompleted = task.status === 'completed';
 
+  const getIconName = useMemo(() => {
+    switch (task.status) {
+      case 'pending':
+        return 'pending';
+      case 'in_progress':
+        return 'in_progress';
+      case 'completed':
+        return 'completed';
+      default:
+        return 'think';
+    }
+  }, [task.status]);
   return (
-    <TouchableOpacity onPress={() => onSelected(task)}>
+    <Pressable
+      style={({ pressed }) => [
+        {
+          transform: [{ scale: pressed ? 0.95 : 1 }],
+        },
+      ]}
+      onPress={() => onSelected(task)}
+    >
       <Card style={styles.card} disabled>
         <View style={styles.content}>
           <View style={styles.leftSection}>
@@ -50,10 +70,15 @@ export const TaskCard = (props: TaskCardProps) => {
             <Text category="c1" style={styles.statusText}>
               {getStatusLabel(task.status)}
             </Text>
+            <Icon
+              name={getIconName}
+              pack="assets"
+              style={{ width: 20, height: 20 }}
+            />
           </View>
         </View>
       </Card>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
@@ -107,6 +132,11 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 12,
     marginLeft: 8,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    gap: 5,
+    width: 110,
   },
   statusText: {
     color: '#FFFFFF',

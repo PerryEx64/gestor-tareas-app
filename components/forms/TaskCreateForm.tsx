@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import { defaultValidate } from '../../utils/rules-form';
 import { TaskStatusChip } from '../../screens/private/tasks/components/TaskStatusChip';
 import { BottomSheetInput } from '../BottomSheetInput';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 interface TaskCreateFormProps {
   onSubmit: (data: TaskBodyCreate | TaskBodyUpdate) => void;
@@ -18,7 +18,6 @@ type IconName = 'think' | 'pending' | 'in_progress' | 'completed';
 
 export const TaskCreateForm = (props: TaskCreateFormProps) => {
   const { onSubmit, isLoading, initialValues, mode = 'create' } = props;
-  const [iconName, setIconName] = useState<IconName>('think');
   const {
     control,
     handleSubmit,
@@ -62,7 +61,7 @@ export const TaskCreateForm = (props: TaskCreateFormProps) => {
         <Icon
           name={getIconName}
           pack="assets"
-          style={{ width: 60, height: 60 }}
+          style={{ width: 65, height: 65 }}
         />
         <Text category="h5" style={styles.title}>
           {isEditMode ? 'Editar Tarea' : 'Nueva Tarea'}
