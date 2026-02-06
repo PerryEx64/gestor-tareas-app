@@ -23,10 +23,12 @@ export const RegisterForm = (props: RegisterFormProps) => {
   const {
     control,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<RegisterBody>();
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const navigation = usePublicNavigation();
+  const password = watch('password');
 
   const handleLoginNavigation = () => {
     navigation.navigate('login');
@@ -154,6 +156,35 @@ export const RegisterForm = (props: RegisterFormProps) => {
                   onChangeText={onChange}
                   status={errors.password ? 'danger' : 'basic'}
                   caption={renderCaption(errors.password?.message)}
+                  secureTextEntry={secureTextEntry}
+                  accessoryRight={renderIcon}
+                  autoCapitalize="none"
+                  autoComplete="password"
+                  textContentType="password"
+                  size="large"
+                />
+              );
+            }}
+          />
+
+          <Controller
+            name="confirmPassword"
+            control={control}
+            rules={{
+              required: { value: true, message: 'Este campo es requerido' },
+              validate: (value) =>
+                value === password || 'Las contraseñas no coinciden',
+            }}
+            render={({ field: { onBlur, onChange, value } }) => {
+              return (
+                <Input
+                  value={value}
+                  label="Confirmar Contraseña"
+                  placeholder="Repite tu contraseña"
+                  onBlur={onBlur}
+                  onChangeText={onChange}
+                  status={errors.confirmPassword ? 'danger' : 'basic'}
+                  caption={renderCaption(errors.confirmPassword?.message)}
                   secureTextEntry={secureTextEntry}
                   accessoryRight={renderIcon}
                   autoCapitalize="none"
